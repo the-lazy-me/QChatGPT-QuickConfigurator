@@ -61,7 +61,7 @@
                             <i class="el-icon-question"></i>
                         </el-tooltip>
                     </div>
-                    <el-input v-model="configAI.requestTimeout" placeholder="请输入Request Timeout" type="number"></el-input>
+                    <el-input-number v-model="configAI.requestTimeout"  :min="120" :max="9999" placeholder="请输入超时时间，单位为秒"></el-input-number>
                 </el-form-item>
 
             </el-form>
@@ -98,10 +98,6 @@ export default {
             .catch(err => {
                 console.log(err);
             });
-
-    },
-
-    methods: {
 
     },
 };
@@ -154,6 +150,10 @@ div>>>.el-input__inner {
 }
 
 .el-select {
+    width: 100%;
+}
+
+.el-input-number {
     width: 100%;
 }
 
